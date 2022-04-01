@@ -1,0 +1,15 @@
+version: '2'
+services:
+  thinklink-service:
+    container_name: think-link_container
+    restart: always
+    image: flask
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code
+    environment:
+      - FETCH_TIME=30
